@@ -13,11 +13,11 @@ public class LinearSearch {
         }
         System.out.print("Enter the Element to be found : ");
         int findElement = sc.nextInt();
-        ls(array, size, findElement);
+        linearSearch(array, size, findElement);
 
     }
 
-    public static void ls(int array[], int size, int findElement) {
+    public static void linearSearch(int array[], int size, int findElement) {
         int z = 0;
         for (int i = 0; i < size; i++) {
             if (array[i] == findElement) {
