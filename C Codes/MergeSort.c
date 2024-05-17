@@ -1,12 +1,11 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 void Merge(int array[], int start, int mid, int end) {
     int size1 = mid - start + 1;
     int size2 = end - mid;
 
-    int* array1 = new int[size1];
-    int* array2 = new int[size2];
+    int array1[size1];
+    int array2[size2];
 
     for (int i = 0; i < size1; i++) {
         array1[i] = array[start + i];
@@ -16,6 +15,7 @@ void Merge(int array[], int start, int mid, int end) {
     }
 
     int i = 0, j = 0, k = start;
+
     while (i < size1 && j < size2) {
         if (array1[i] <= array2[j]) {
             array[k] = array1[i];
@@ -38,9 +38,6 @@ void Merge(int array[], int start, int mid, int end) {
         j++;
         k++;
     }
-
-    delete[] array1;
-    delete[] array2;
 }
 
 void MergeSort(int array[], int start, int end) {
@@ -54,21 +51,21 @@ void MergeSort(int array[], int start, int end) {
 
 int main() {
     int size;
-    cout << "Enter the size of the array: ";
-    cin >> size;
-    int* array = new int[size];
-    cout << "Enter the elements in the array: ";
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int array[size];
+    printf("Enter the elements in the array: ");
     for (int i = 0; i < size; i++) {
-        cin >> array[i];
+        scanf("%d", &array[i]);
     }
-    MergeSort(array, 0, size - 1);
-    cout << "Sorted array: ";
-    for (int i = 0; i < size; i++) {
-        cout << array[i] << " ";
-    }
-    cout << endl;
 
-    delete[] array;
+    MergeSort(array, 0, size - 1);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 
     return 0;
 }
