@@ -18,7 +18,7 @@ void InsertionSort(int array[],int size)
     {
         cout<<array[i]<<" ";
     }
-}
+} 
 int main()
 {
     int size;
