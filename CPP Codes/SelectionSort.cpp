@@ -6,9 +6,11 @@ int SelectionSort(int array[],int size)
     {
         int min = i;
         for(int j = i+1 ; j <size ; j++ )
-        if(array[j]<array[min])
-        {  
-            min = j;
+        {
+            if(array[j]<array[min])
+            {  
+                min = j;
+            }
         }
         if(min != i)
         {

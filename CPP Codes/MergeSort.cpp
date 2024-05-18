@@ -43,7 +43,7 @@ void Merge(int array[], int start, int mid, int end) {
 
 void MergeSort(int array[], int start, int end) {
     if (start < end) {
-        int mid = start + (end - start) / 2;
+        int mid = (end + start) / 2;
         MergeSort(array, start, mid);
         MergeSort(array, mid + 1, end);
         Merge(array, start, mid, end);
