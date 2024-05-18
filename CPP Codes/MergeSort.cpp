@@ -5,8 +5,8 @@ void Merge(int array[], int start, int mid, int end) {
     int size1 = mid - start + 1;
     int size2 = end - mid;
 
-    int* array1 = new int[size1];
-    int* array2 = new int[size2];
+    int array1[size1];
+    int array2[size2];
 
     for (int i = 0; i < size1; i++) {
         array1[i] = array[start + i];
@@ -39,8 +39,6 @@ void Merge(int array[], int start, int mid, int end) {
         k++;
     }
 
-    delete[] array1;
-    delete[] array2;
 }
 
 void MergeSort(int array[], int start, int end) {
