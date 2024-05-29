@@ -46,33 +46,51 @@ public:
 
 int main() {
     Stack stack;
+    int choice, value;
 
-    // Demonstrating the push operation
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
+    do {
+        cout << "\nStack Operations Menu:\n";
+        cout << "1. Push\n";
+        cout << "2. Pop\n";
+        cout << "3. Peek\n";
+        cout << "4. Size\n";
+        cout << "5. Is Empty\n";
+        cout << "6. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    // Demonstrating the size operation
-    cout << "Current stack size: " << stack.size() << endl;
-
-    // Demonstrating the peek operation
-    cout << "Element at the top of the stack: " << stack.peek() << endl;
-
-    // Demonstrating the pop operation
-    cout << "Popped element: " << stack.pop() << endl;
-    cout << "Element at the top after pop: " << stack.peek() << endl;
-
-    // Checking if the stack is empty
-    cout << "Is stack empty? " << (stack.isEmpty() ? "Yes" : "No") << endl;
-
-    // Demonstrating the pop operation until the stack is empty
-    cout << "Popping all elements:" << endl;
-    while (!stack.isEmpty()) {
-        cout << "Popped element: " << stack.pop() << endl;
-    }
-
-    // Checking if the stack is empty after popping all elements
-    cout << "Is stack empty after popping all elements? " << (stack.isEmpty() ? "Yes" : "No") << endl;
+        switch (choice) {
+            case 1:
+                cout << "Enter value to push: ";
+                cin >> value;
+                stack.push(value);
+                cout << "Pushed " << value << " onto the stack.\n";
+                break;
+            case 2:
+                value = stack.pop();
+                if (value != -1) {
+                    cout << "Popped " << value << " from the stack.\n";
+                }
+                break;
+            case 3:
+                value = stack.peek();
+                if (value != -1) {
+                    cout << "Top element is " << value << ".\n";
+                }
+                break;
+            case 4:
+                cout << "Current stack size: " << stack.size() << endl;
+                break;
+            case 5:
+                cout << "Is stack empty? " << (stack.isEmpty() ? "Yes" : "No") << endl;
+                break;
+            case 6:
+                cout << "Exiting...\n";
+                break;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 6);
 
     return 0;
 }
