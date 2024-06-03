@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.*;
 
 class Stack {
     private int[] elements;
@@ -7,8 +8,8 @@ class Stack {
 
     public Stack(int capacity) {
         this.capacity = capacity;
-        this.elements = new int[capacity];
-        this.size = 0;
+        elements = new int[capacity];
+        size = 0;
     }
 
     // Push: Adds an element to the top of the stack
@@ -52,7 +53,7 @@ class Stack {
     }
 }
 
-public class Main {
+public class StackOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Stack stack = new Stack(2); // Initial capacity of 2
