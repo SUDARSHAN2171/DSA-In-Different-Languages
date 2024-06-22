@@ -15,7 +15,7 @@ public class BinarySearch {
         bs(array, size, findElement);
     }
 
-    public static void bs(int array[], int size, int findElement) {
+    public static void bs(int array[] , int size, int findElement) {
         int start = 0;
         int end = size - 1;
         int z = 0;
